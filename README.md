@@ -5,7 +5,7 @@ React Native Lifecycle
 ## Installation
 
 ```sh
-"react-native-lifecycle":"sergeymild/react-native-lifecycle#1.0.0"
+"react-native-lifecycle":"sergeymild/react-native-lifecycle#1.0.1"
 ```
 
 ## Usage
