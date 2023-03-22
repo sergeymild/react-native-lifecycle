@@ -19,10 +19,8 @@ def isNewArchitectureEnabled() {
 }
 
 
-plugins {
-  id 'com.android.library'
-  id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 if (isNewArchitectureEnabled()) {
   apply plugin: "com.facebook.react"
@@ -76,6 +74,15 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation "androidx.lifecycle:lifecycle-common:+"
   implementation "androidx.lifecycle:lifecycle-process:+"
+
+  constraints {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version") {
+      because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+    }
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version") {
+      because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+    }
+  }
 }
 
 if (isNewArchitectureEnabled()) {
